@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weapons
   resources :inventory_items
   resources :champions
   resources :users

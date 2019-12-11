@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1> 
+
+<ul>
+  <% @user.champions.each do |champion| %> 
+    <li>
+      <%= link_to champion.name, champion_path(champion) %> 
+    </li> 
+  <% end %> 
+</ul> 
+
+<%= link_to Create New Champion, champions_path %> 
+<%= link_to "Log Out", logout_path %> 

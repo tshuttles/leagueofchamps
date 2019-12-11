@@ -1,4 +1,7 @@
 class Weapon < ApplicationRecord
   has_many :inventory_items 
   has_many :champions, through: :inventory_items
+
+  validates :name, uniqueness: true
+  validates :name, length {minimum: 3}
 end

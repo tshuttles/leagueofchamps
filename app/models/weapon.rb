@@ -3,5 +3,5 @@ class Weapon < ApplicationRecord
   has_many :champions, through: :inventory_items
 
   validates :name, uniqueness: true
-  validates :name, length {minimum: 3}
+  validates :name, length {minimum: 5}
 end

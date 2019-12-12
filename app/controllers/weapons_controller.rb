@@ -9,7 +9,7 @@ class WeaponsController < ApplicationController
     @weapon.save ? (redirect_to weapon_path(@weapon)) : (redirect_to new_weapon_path)
   end 
 
-  def delete
+  def destroy
     Weapon.find(params[:id]).destroy 
     redirect_to weapon_path(@weapon)
   end 

@@ -25,7 +25,7 @@ class ChampionsController < ApplicationController
     redirect_to champion_path(@champion)
   end 
 
-  def delete 
+  def destroy
     Champion.find(params[:id]).destroy
     redirect_to champions_path  
   end

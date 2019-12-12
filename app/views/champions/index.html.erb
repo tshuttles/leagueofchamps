@@ -1,0 +1,11 @@
+<h1><%= @user.name %>'s Champions</h1><br> 
+
+<h2>Your Champions: </h2> 
+<ul>
+  <% @user.champions.each do |champion| %> 
+    <li> 
+      <%= link_to champion.name, champion_path(champion) %> 
+    </li> 
+  <% end %> 
+</ul> 
+

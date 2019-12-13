@@ -8,3 +8,4 @@
 
 races = Race.create([{name: 'Human'}, {name: 'Elf'}, {name: 'Dwarf'}, {name: 'Troll'}])
 classifications = Classification.create([{name: 'Warrior'}, {name: 'Ranger'}, {name: 'Sorceror'}, {name: 'Rogue'}, {name: 'Cleric'}])
+types = Weapon.types.create([{type: Sword}, {type: Bow}, {type: Staff}, {type: Axe}])

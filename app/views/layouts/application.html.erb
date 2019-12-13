@@ -10,10 +10,9 @@
   </head>
 
   <body>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+      <a class="navbar-brand" href="<%= root_url %>">Home</a>
+    </nav>
     <%= yield %>
-    # <footer class="branding">
-    # <% if logged_in? %><br>
-    #   # <a href="/logout"><input type="submit" value="Logout"></a>
-    <% end %>
   </body>
 </html>

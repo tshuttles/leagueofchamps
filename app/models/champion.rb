@@ -6,7 +6,7 @@ class Champion < ApplicationRecord
   has_many :weapons, through: inventory_items
 
   validates :name, uniqueness: true
-  validates :name, length {minimum: 3}
+  validates :name, length: {minimum: 3}
 
   accepts_nested_attributes_for :weapon 
 end

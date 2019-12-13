@@ -1,8 +1,18 @@
-<%= form_with model: user, local: true do |f| %> 
-  <%= f.label :name %> 
-  <%= f.text_field :name %> 
-  <%= f.label :password %> 
-  <%= f.password_field :password %> 
+<h1>New User Sign Up</h1>
+
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %> 
+    <p class="error"><%= message %></p>
+  <% end %> 
+<% end %> 
+
+<%= form_with model: @user, local: true do |f| %> 
+  <%= f.label :name, "Your Name" %> 
+  <%= f.text_field :name %><br>
+  <br>
+  <%= f.label :password, "Your Password" %> 
+  <%= f.password_field :password %><br>
+  <br>
   
-  <%= f.submit "Create User" %> 
+  <%= f.submit "Sign Up" %> 
 <% end %> 

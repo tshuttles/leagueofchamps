@@ -9,4 +9,7 @@ class Champion < ApplicationRecord
   validates :name, length: {minimum: 3}
 
   accepts_nested_attributes_for :weapon 
+
+  RACE = %w{ Human Elf Dwarf Troll }
+  CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric }
 end

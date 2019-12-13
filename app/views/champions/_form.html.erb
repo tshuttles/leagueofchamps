@@ -1,0 +1,12 @@
+<%= form_with model: champion, local: true do |f| %> 
+  <%= f.label :name, "Champion Name" %>
+  <%= f.text_field :name %><br> 
+
+  <%= f.label :race, "Champion Race" %> 
+
+  <%= f.label :classification, "Champion Class" %> 
+
+  <%= f.label :weapon, "Weapon" %> 
+  
+  <%= f.submit "Create Champion" %> 
+<% end %> 

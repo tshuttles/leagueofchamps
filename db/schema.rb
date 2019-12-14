@@ -21,22 +21,10 @@ ActiveRecord::Schema.define(version: 2019_12_10_014632) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "classifications", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "inventory_items", force: :cascade do |t|
     t.string "weapon_name"
     t.integer "champion_id"
     t.integer "weapon_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "races", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

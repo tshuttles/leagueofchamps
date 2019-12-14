@@ -1,0 +1,17 @@
+<h1>Making a new Weapon</h1> 
+
+<% if @inventory_item.errors.any? %>
+    <ul>
+      <% @inventory_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: inventory_item, local: true do |f| %> 
+  <%= f.label :weapon_name, "Your Unique Weapon Name" %>
+  <%= f.text_field :weapon_name %> 
+
+  <%= f.submit %> 
+<% end %> 

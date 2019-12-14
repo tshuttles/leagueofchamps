@@ -1,12 +1,26 @@
+<% if @champion.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@champion.errors.count, "error") %> prohibited this champion from being saved:</h2>
+    <ul>
+      <% @champion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: champion, local: true do |f| %> 
   <%= f.label :name, "Champion Name" %>
   <%= f.text_field :name %><br> 
 
-  <%= f.label :race, "Champion Race" %> 
+  <%= f.label :race, "Champion Race" %>
+  <%= f.collection_select :race, collection: Champion::RACE, prompt: 'Select race', required: true %><br> 
 
   <%= f.label :classification, "Champion Class" %> 
+  <%= f.collection_select :classification, collection: Champion::CLASSIFICATION, prompt: 'Select class', required: true %><br> 
 
-  <%= f.label :weapon, "Weapon" %> 
-  
+  <%= f.label :weapon, "Weapon" %>
+  <%= f.collection_select :type, collection: Champion::TYPE, prompt: 'Select weapon type', required: true %><br>
+
   <%= f.submit "Create Champion" %> 
 <% end %> 

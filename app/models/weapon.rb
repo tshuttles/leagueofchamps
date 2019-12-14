@@ -4,6 +4,4 @@ class Weapon < ApplicationRecord
 
   validates :name, uniqueness: true
   validates :name, length {minimum: 5}
-
-  TYPES = %w{ Sword Bow Staff Axe Knife }
 end

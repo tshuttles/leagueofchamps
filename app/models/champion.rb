@@ -10,4 +10,5 @@ class Champion < ApplicationRecord
 
   RACE = %w{ Human Elf Dwarf Troll }
   CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric }
+  TYPES = %w{ Sword Bow Staff Axe Knife }
 end

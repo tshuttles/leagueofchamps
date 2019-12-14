@@ -10,17 +10,17 @@
 <% end %>
 
 <%= form_with model: champion, local: true do |f| %> 
-  <%= f.label :name, "Champion Name" %>
-  <%= f.text_field :name %><br> 
-
+  <%= f.label :name, "Champion Name: " %>
+  <%= f.text_field :name %><br>
+  <br>
   <%= f.label :race, "Champion Race" %>
-  <%= f.collection_select :race, collection: Champion::RACE, prompt: 'Select race', required: true %><br> 
-
+  <%= f.select :race, Champion::RACE, include_blank: 'Select race', required: true %><br>
+  <br>
   <%= f.label :classification, "Champion Class" %> 
-  <%= f.collection_select :classification, collection: Champion::CLASSIFICATION, prompt: 'Select class', required: true %><br> 
-
+  <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
+  <br>
   <%= f.label :weapon, "Weapon" %>
-  <%= f.collection_select :type, collection: Champion::TYPE, prompt: 'Select weapon type', required: true %><br>
-
+  <%= f.select :weapon, Champion::TYPES, include_blank: 'Select weapon type', required: true %><br>
+  <br>
   <%= f.submit "Create Champion" %> 
 <% end %> 

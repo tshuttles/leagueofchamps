@@ -1,17 +1,23 @@
 class InventoryItemsController < ApplicationController
   
   def new 
-    @weapon_name = Weapon.name.new 
+    @inventory_items = InventoryItem.new
   end 
 
   def create 
-    @weapon_name = Weapon.name.new
-    @weapon_name.save ? (redirect_to champion_path(@champion)) : (redirect_to champion_path)
+    byebug
+    @inventory_items = InventoryItem.new(inventory_items_params) 
+    @inventory_items.save ? (redirect_to champion_path(@champion)) : (redirect_to new_inventory_items_path)
   end 
 
+  # optional
   def destroy 
-    @weapon_name.delete 
-    redirect_to new_champion_path
+  end
+
+  private 
+
+  def inventory_items_params 
+    params.require(:inventory_items).permit(:champion_id, :weapon_id, :weapon_count)
   end 
 
 end

@@ -13,14 +13,19 @@
   <%= f.label :name, "Champion Name: " %>
   <%= f.text_field :name %><br>
   <br>
-  <%= f.label :race, "Champion Race" %>
+  <%= f.label :race, "Champion Race:" %>
   <%= f.select :race, Champion::RACE, include_blank: 'Select race', required: true %><br>
   <br>
-  <%= f.label :classification, "Champion Class" %> 
+  <%= f.label :classification, "Champion Class:" %> 
   <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
   <br>
-  <%= f.label :weapon, "Weapon" %>
-  <%= f.select :weapon, Champion::TYPES, include_blank: 'Select weapon type', required: true %><br>
-  <br>
+    <%= f.fields_for :weapons do |attr| %> 
+      <%= attr.label :type, "Weapon Type:" %>
+      <%= attr.text_field :type %><br>
+      <br>
+      <%= attr.label :weapon_name, "Weapon Name:" %>
+      <%= attr.text_field :weapon_name %><br>
+    <% end %><br>
+
   <%= f.submit "Create Champion" %> 
 <% end %> 

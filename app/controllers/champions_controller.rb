@@ -1,15 +1,15 @@
 class ChampionsController < ApplicationController
   before_action :find_champion, only: [:show, :edit, :update]
 
+  def new 
+    @champion = Champion.new 
+  end 
+  
   def index 
     @champions = Champion.all 
   end 
 
   def show
-  end 
-
-  def new 
-    @champion = Champion.new 
   end 
 
   def create 
@@ -33,7 +33,7 @@ class ChampionsController < ApplicationController
   private 
 
   def champion_params 
-    params.require(:champion).permit(:name, :weapon, :race, :class)
+    params.require(:champion).permit(:name, :weapon, :race, :class, inventory_items: [:weapon_name])
   end 
 
   def find_champion

@@ -1,4 +1,8 @@
 <h1>Create a Weapon</h1> 
 
 <%= form_with model: weapon, local: true do |f| %>
-  <%= f.label :wea
+  <%= f.label :weapon_name, "Unique Weapon Name" %>
+  <%= f.text_field :weapon_name %><br>
+
+  <%= f.submit
+<% end %> 

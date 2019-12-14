@@ -1,15 +1,15 @@
 class ChampionsController < ApplicationController
   before_action :find_champion, only: [:show, :edit, :update]
 
-  def new 
-    @champion = Champion.new 
-  end 
-  
   def index 
     @champions = Champion.all 
   end 
 
   def show
+  end 
+
+  def new 
+    @champion = Champion.new 
   end 
 
   def create 

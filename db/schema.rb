@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_014632) do
+ActiveRecord::Schema.define(version: 2019_12_14_062306) do
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
-    t.string "class"
+    t.string "classification"
     t.string "race"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

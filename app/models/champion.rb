@@ -6,7 +6,8 @@ class Champion < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, length: {minimum: 3}
 
-  accepts_nested_attributes_for :inventory_items 
+  accepts_nested_attributes_for :inventory_items
+  accepts_nested_attributes_for :weapons
 
   RACE = %w{ Human Elf Dwarf Troll }
   CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric }

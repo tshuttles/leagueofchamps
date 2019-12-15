@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_202315) do
+ActiveRecord::Schema.define(version: 2019_12_10_014632) do
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2019_12_14_202315) do
   end
 
   create_table "weapons", force: :cascade do |t|
-    t.string "type"
+    t.string "weapon_type"
+    t.string "weapon_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "weapon_name"
   end
 
 end

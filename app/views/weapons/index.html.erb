@@ -1,0 +1,12 @@
+<h1><%= @user.name %>'s Weapons</h1> 
+
+<ul>
+  <%= @user.weapons.each do |weapon| %> 
+    <li>
+      <%= weapon.weapon_name %> - <%= weapon.weapon_type %>
+    </li>
+  <% end %> 
+</ul> 
+
+<%= link_to "Create Weapon", new_weapon_path %> 
+<%= link_to "Your Champion", champion_path(@champion) %> 

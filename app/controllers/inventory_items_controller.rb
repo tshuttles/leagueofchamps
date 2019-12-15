@@ -4,8 +4,7 @@ class InventoryItemsController < ApplicationController
     @inventory_items = InventoryItem.new
   end 
 
-  def create 
-    byebug
+  def create
     @inventory_items = InventoryItem.new(inventory_items_params) 
     @inventory_items.save ? (redirect_to champion_path(@champion)) : (redirect_to new_inventory_items_path)
   end 

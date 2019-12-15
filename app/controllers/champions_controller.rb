@@ -12,24 +12,11 @@ class ChampionsController < ApplicationController
     @champion = Champion.new 
   end 
 
-  # def create 
-  #   @champion = Champion.new(champion_params)
-  #   @champion.save ? (redirect_to champion_path(@champion)) : (redirect_to new_champion_path)
-  # end
-
   def create 
+    @weapon = current_user.weapons.build(champion_params)
     @champion = current_user.champions.build(champion_params)
     @champion.save ? (redirect_to champion_path(@champion)) : (redirect_to new_champion_path)
   end
-
-  # def create 
-  #   @champion = current_user.champions.new(champion_params) 
-  #   @champion.save 
-  #     redirect_to champion_path(@champion) 
-  #   else 
-  #     render 'new' 
-  #   end 
-  # end 
 
   def edit 
   end 
@@ -47,7 +34,7 @@ class ChampionsController < ApplicationController
   private 
 
   def champion_params 
-    params.require(:champion).permit(:name, :race, :classification, :weapons, inventory_items: [:weapon_name])
+    params.require(:champion).permit(:name, :race, :classification, :weapon_id, inventory_items: [:weapon_count])
   end 
 
   def find_champion

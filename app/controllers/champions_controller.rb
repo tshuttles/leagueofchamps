@@ -13,7 +13,6 @@ class ChampionsController < ApplicationController
   end 
 
   def create 
-    @weapon = current_user.weapons.build(champion_params)
     @champion = current_user.champions.build(champion_params)
     @champion.save ? (redirect_to champion_path(@champion)) : (redirect_to new_champion_path)
   end

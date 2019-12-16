@@ -1,6 +1,6 @@
 <h1>Create a New Weapon</h1>
 
-<%= form_with model: weapon, local: true do |f| %> 
+<%= form_with model: @weapon, local: true do |f| %> 
   <%= f.label :weapon_type, "Weapon Type:" %>
   <%= f.text_field :weapon_type %><br>
   <br>
@@ -8,7 +8,7 @@
   <%= f.text_field :weapon_name %><br>
   <br>
   <%= f.submit "Create Weapon" %> 
-<% end %> 
+<% end %>
+<br>
 
-<%= link_to "Your Weapons", weapons_path %> 
-<%= link_to "Champion", champion_path(@champion) %> 
+<%= link_to "Your Weapons", weapons_path %>

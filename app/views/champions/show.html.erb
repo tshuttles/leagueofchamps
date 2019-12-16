@@ -1,16 +1,18 @@
-<h1><%= @champion.name %></h1><br> 
+<h1><%= @champion.name %></h1>
 
-<h2>Traits</h2> 
-<%= @champion.race %><br> 
-<%= @champion.classification %><br>
+<h2><u>Traits</u></h2>
+Race: <%= @champion.race %><br> 
+Class: <%= @champion.classification %><br>
 
-<h2>Weapons</h2>
+<h2><u>Weapons</u></h2>
 <ul>
   <% @champion.weapons.each do |weapon| %> 
     <li>
       <%= weapon.weapon_name %> 
     </li>
   <% end %> 
-</ul> 
+</ul>
+<br>
 
+<%= link_to "Create a Weapon", new_weapon_path %><br>
 <%= link_to "Your Champions", champions_path %> 

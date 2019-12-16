@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :users, except: [:new]
+  resources :weapons
   resources :champions do 
     resources :weapons, only: [:index, :new]
   end
-  resources :weapons
   resources :inventory_items
 
   root 'application#home'

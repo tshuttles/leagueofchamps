@@ -10,7 +10,11 @@ class WeaponsController < ApplicationController
 
   def create 
     @weapon = Weapon.new(weapon_params)
-    @weapon.save ? (redirect_to champion_path(@champion)) : (redirect_to new_weapon_path)
+    if @weapon.save 
+      redirect_to champion_path(@champion)
+    else
+      (redirect_to new_weapon_path)
+    end
   end 
 
   def destroy

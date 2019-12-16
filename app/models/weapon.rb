@@ -8,15 +8,15 @@ class Weapon < ApplicationRecord
   validates :weapon_type, uniqueness: true
   validates :weapon_type, length: {minimum: 3}
 
-  before_validation :uppercase_weapon_name
-  before_validation :uppercase_weapon_type
+  before_validation :cap_weapon_name
+  before_validation :cap_weapon_type
 
-  def uppercase_weapon_name
-    weapon_name.upcase! 
+  def cap_weapon_name
+    weapon_name.capitalize! 
   end 
 
-  def uppercase_weapon_type 
-    weapon_type.upcase! 
+  def cap_weapon_type 
+    weapon_type.capitalize! 
   end 
 
 end

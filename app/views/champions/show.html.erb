@@ -13,6 +13,7 @@ Class: <%= @champion.classification %><br>
   <% end %> 
 </ul>
 <br>
-
+<hr>
 <%= link_to "Create A Weapon", new_champion_weapon_path(@champion) %><br>
+<%= link_to "Your Weapons", champion_weapons_path(@champion) %><br>
 <%= link_to "Your Champions", champions_path %> 

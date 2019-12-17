@@ -1,7 +1,7 @@
-<h1><%= @user.name %>'s Weapons</h1> 
+<h1><%= @champion.name %>'s Weapons</h1> 
 
 <ul>
-  <%= @user.weapons.each do |weapon| %> 
+  <%= @champion.weapons.each do |weapon| %> 
     <li>
       <%= weapon.weapon_name %> - <%= weapon.weapon_type %>
     </li>

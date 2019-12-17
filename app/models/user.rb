@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :champions
-  # has_many :inventory_items, through: :champions
+  has_many :weapons
 
   has_secure_password
   # validates :name, uniqueness: true

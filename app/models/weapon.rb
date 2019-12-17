@@ -7,7 +7,6 @@ class Weapon < ApplicationRecord
   validates :weapon_type, uniqueness: true
   validates :weapon_type, length: {minimum: 3}
 
-  accepts_nested_attributes_for :inventory_items
   before_validation :cap_weapon_type
 
   def cap_weapon_type 

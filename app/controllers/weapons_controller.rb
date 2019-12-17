@@ -9,15 +9,16 @@ class WeaponsController < ApplicationController
   end 
 
   def new 
-    @weapon = Weapon.new 
+    @weapon = Weapon.new(champion_id: params[:champion_id])
   end 
 
   def create 
-    @weapon = current_user.weapons.build(weapon_params)
+    @champion = Champion.find_by(id: params[:champion_id])
+    @weapon = @champion.weapons.build(weapon_params)
     if @weapon.save 
-      redirect_to champion_path(@champion)
+      redirect_to weapons_path
     else
-      (redirect_to new_weapon_path)
+      redirect_to new_weapon_path
     end
   end 
 

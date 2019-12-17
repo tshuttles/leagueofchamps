@@ -2,9 +2,10 @@
 
 <%= form_with model: @weapon, local: true do |f| %> 
   <%= f.label :weapon_type, "Weapon Type:" %>
-  <%= f.hidden_field :champion_id %> 
   <%= f.text_field :weapon_type %><br>
   <br>
+  <label>Select champ: </label>
+  <%= f.collection_check_boxes :champion_ids, Champion.all, :id, :name %>
   <%= f.submit "Create Weapon" %> 
 <% end %><br>
 

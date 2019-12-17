@@ -1,3 +1,4 @@
+
 class WeaponsController < ApplicationController
 
   def index 
@@ -9,14 +10,15 @@ class WeaponsController < ApplicationController
   end 
 
   def new 
-    @weapon = Weapon.new(champion_id: params[:champion_id])
+    @champion = Champion.find_by_id(params[:champion_id])
+    @weapon = Weapon.new
   end 
 
   def create 
-    @champion = Champion.find_by(id: params[:champion_id])
-    @weapon = @champion.weapons.build(weapon_params)
+    @weapon = Weapon.new(weapon_params)
     if @weapon.save 
-      redirect_to weapons_path
+      @champion = @weapon.champions.where(id: 1)
+      redirect_to champion_weapons_path(@champion)
     else
       redirect_to new_weapon_path
     end
@@ -30,7 +32,7 @@ class WeaponsController < ApplicationController
   private 
 
   def weapon_params 
-    params.require(:weapon).permit(:weapon_type, inventory_items: [:weapon_name])
+    params.require(:weapon).permit(:weapon_type, inventory_items: [:weapon_name], champion_ids: [])
   end 
 
 end

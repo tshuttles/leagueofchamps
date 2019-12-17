@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :champions
-  has_many :weapons
   # has_many :inventory_items, through: :champions
 
   has_secure_password

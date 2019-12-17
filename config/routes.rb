@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new]
   resources :weapons
   resources :champions do 
-    resources :weapons, only: [:index, :new]
+    resources :weapons, only: [:index, :new, :show]
   end
   resources :inventory_items
 

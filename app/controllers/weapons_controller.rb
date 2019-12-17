@@ -4,12 +4,16 @@ class WeaponsController < ApplicationController
     @weapons = Weapon.all
   end 
 
+  def show 
+    @weapon = Weapon.find_by(id: params[:id])
+  end 
+
   def new 
     @weapon = Weapon.new 
   end 
 
   def create 
-    @weapon = Weapon.new(weapon_params)
+    @weapon = current_user.weapons.build(weapon_params)
     if @weapon.save 
       redirect_to champion_path(@champion)
     else
@@ -25,7 +29,7 @@ class WeaponsController < ApplicationController
   private 
 
   def weapon_params 
-    params.require(:weapon).permit(:weapon_name, :weapon_type)
+    params.require(:weapon).permit(:weapon_type, inventory_items: [:weapon_name])
   end 
 
 end

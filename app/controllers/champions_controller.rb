@@ -33,7 +33,7 @@ class ChampionsController < ApplicationController
   private 
 
   def champion_params 
-    params.require(:champion).permit(:name, :race, :classification, :weapon_id, inventory_items: [:weapon_count])
+    params.require(:champion).permit(:name, :race, :classification, :weapon_id, inventory_items: [:weapon_name], weapons_attributes: [:weapon_type])
   end 
 
   def find_champion

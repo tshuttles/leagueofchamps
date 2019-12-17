@@ -16,7 +16,7 @@ class InventoryItemsController < ApplicationController
   private 
 
   def inventory_items_params 
-    params.require(:inventory_item).permit(:champion_id, :weapon_id, :weapon_count)
+    params.require(:inventory_item).permit(:champion_id, :weapon_id, :weapon_name)
   end 
 
 end

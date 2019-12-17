@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_014632) do
   end
 
   create_table "inventory_items", force: :cascade do |t|
-    t.integer "weapon_count"
+    t.integer "weapon_name"
     t.integer "champion_id"
     t.integer "weapon_id"
     t.datetime "created_at", precision: 6, null: false
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_014632) do
 
   create_table "weapons", force: :cascade do |t|
     t.string "weapon_type"
-    t.string "weapon_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

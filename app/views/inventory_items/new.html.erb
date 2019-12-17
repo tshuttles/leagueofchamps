@@ -1,4 +1,4 @@
-<h1>Inventory Creation</h1> 
+<h1>Give Your Weapon a Legendary Name</h1> 
 
 # <% if @inventory_item.errors.any? %>
 #     <ul>
@@ -10,8 +10,8 @@
 # <% end %>
 
 <%= form_with model: inventory_item, local: true do |f| %> 
-  <%= f.label :weapon_count, "How many weapons does your champion have?" %> 
-  <%= f.text_field :weapon_count %><br>
+  <%= f.label :weapon_name, "Weapon Name:" %> 
+  <%= f.text_field :weapon_name %><br>
 
-  <%= f.submit "Submit Weapon Count" %> 
+  <%= f.submit "Submit Weapon Name" %> 
 <% end %> 

@@ -1,9 +1,9 @@
-<h1><%= @weapon.weapon_name %></h1>
+<h1><%= @inventory_item.weapon_name %></h1>
 
-<%= @weapon.type %><br>
+<%= @weapon.weapon_type %><br>
 <br>
 
+<%= link_to "Give Your Weapon a Name", new_inventory_item_path %><br>
 <%= link_to "Delete Weapon", 'weapon_path(@weapon)', :method => "Delete" %><br>
-
-<%= link_to "Your Weapons", weapons_path %>
-<%= link_to "Your Champions", champions_path %> 
+<%= link_to "Your Weapons", weapons_path %><br>
+<%= link_to "Your Champion", champion_path(@champion) %> 

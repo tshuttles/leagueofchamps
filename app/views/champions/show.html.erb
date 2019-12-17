@@ -6,13 +6,13 @@ Class: <%= @champion.classification %><br>
 
 <h2><u>Weapons</u></h2>
 <ul>
-  <% @champion.weapons.each do |weapon| %> 
+  <% @champion.inventory_items.each do |weapon| %> 
     <li>
-      <%= weapon.weapon_name %> 
+      <%= weapon.weapon_name %> - <%= weapon.weapon_type %> 
     </li>
   <% end %> 
 </ul>
 <br>
 
-<%= link_to "Create a Weapon", new_weapon_path %><br>
+<%= link_to "Create A Weapon", new_champion_weapon_path(@champion) %><br>
 <%= link_to "Your Champions", champions_path %> 

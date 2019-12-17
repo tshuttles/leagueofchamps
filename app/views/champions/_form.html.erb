@@ -19,9 +19,6 @@
   <%= f.label :classification, "Champion Class:" %> 
   <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
   <br>
-  <%= f.label :weapon, "Weapon Name:" %> 
-  <%= f.collection_select :weapon, Weapon.all, :id, :weapon_name, include_blank: 'Select weapon type', required: true %><br>
-  <br>
 
   <%= f.submit "Create Champion" %> 
 <% end %> 

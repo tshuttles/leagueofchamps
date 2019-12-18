@@ -9,10 +9,10 @@ class WeaponsController < ApplicationController
     @weapon = Weapon.find_by(id: params[:id])
   end 
 
-  def new 
-    @champion = Champion.find_by_id(params[:champion_id])
-    @weapon = Weapon.new
-  end 
+  # def new 
+  #   @champion = Champion.find_by_id(params[:champion_id])
+  #   @weapon = Weapon.new
+  # end 
 
   def create 
     @weapon = Weapon.new(weapon_params)
@@ -26,7 +26,7 @@ class WeaponsController < ApplicationController
 
   def destroy
     Weapon.find(params[:id]).destroy 
-    redirect_to champion_path(@champion)
+    redirect_to weapons_path
   end 
 
   private 

@@ -1,5 +1,5 @@
 <h1><%= @champion.name %></h1>
-
+<hr>
 <h2><u>Traits</u></h2>
 Race: <%= @champion.race %><br> 
 Class: <%= @champion.classification %><br>
@@ -8,12 +8,13 @@ Class: <%= @champion.classification %><br>
 <ul>
   <% @champion.inventory_items.each do |weapon| %> 
     <li>
-      <%= weapon.weapon_name %> - <%= weapon.weapon_type %> 
+      <%= link_to weapon.weapon_name, weapon_path(weapon) %>
     </li>
   <% end %> 
 </ul>
 <br>
 <hr>
-<%= link_to "Create A Weapon", new_champion_weapon_path(@champion) %><br>
+<%= link_to "Create a Weapon", new_champion_weapon_path(@champion) %><br>
 <%= link_to "Your Weapons", champion_weapons_path(@champion) %><br>
+<%= link_to "Delete Champion", champion_path, method: :delete %><br>
 <%= link_to "Your Champions", champions_path %> 

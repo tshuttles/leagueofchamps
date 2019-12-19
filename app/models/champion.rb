@@ -12,7 +12,7 @@ class Champion < ApplicationRecord
   after_create :cap_name
 
   def cap_name 
-    name.capitalize! if name
+    self.name.capitalize! if name
   end 
 
   RACE = %w{ Human Elf Dwarf Troll }

@@ -8,7 +8,7 @@ class InventoryItem < ApplicationRecord
   before_validation :cap_weapon_name
 
  def cap_weapon_name
-   weapon_name.capitalize!
+   self.weapon_name.capitalize!
   end 
 
 end

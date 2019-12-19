@@ -1,6 +1,6 @@
 <% if @champion.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@champion.errors.count, "error") %> prohibited this champion from being saved:</h2>
+    <h3><%= pluralize(@champion.errors.count, "error") %> prohibited this champion from being saved:</h3>
     <ul>
       <% @champion.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,22 +10,34 @@
 <% end %>
 
 <%= form_with model: champion, local: true do |f| %> 
-  <%= f.label :name, "Champion Name: " %>
-  <%= f.text_field :name %><br>
+  <p>
+    <%= f.label :name, "Champion Name: " %>
+    <%= f.text_field :name %><br>
+  </p>
   <br>
-  <%= f.label :race, "Champion Race:" %>
-  <%= f.select :race, Champion::RACE, include_blank: 'Select race', required: true %><br>
+  <p>
+    <%= f.label :race, "Champion Race:" %>
+    <%= f.select :race, Champion::RACE, include_blank: 'Select race', required: true %><br>
+  </p>
   <br>
-  <%= f.label :classification, "Champion Class:" %> 
-  <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
+  <p>
+    <%= f.label :classification, "Champion Class:" %> 
+    <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
+  </p>
   <br>
-  <%= f.label :weapon_type, "Weapon Type:" %>
-  <%= f.collection_select(:champion, :weapon_ids, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
+  <p>
+    <%= f.label :weapon_type, "Weapon Type:" %>
+    <%= f.collection_select(:champion, :weapon_ids, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
+  </p>
   <br>
-  <%= f.fields_for :inventory_items, InventoryItem.new do |attr| %>
-    <%= attr.label "Name Your Weapon:" %>
-    <%= attr.text_field :weapon_name %>
-  <% end %><br>
+  <p>
+    <%= f.fields_for :inventory_items, InventoryItem.new do |attr| %>
+      <%= attr.label "Name Your Weapon:" %>
+      <%= attr.text_field :weapon_name %>
+    <% end %><br>
+  </p>
   <br>
-  <%= f.submit "Create Champion" %> 
+  <p>
+    <%= f.submit "Create Champion" %> 
+  </p>
 <% end %> 

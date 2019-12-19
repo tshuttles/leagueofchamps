@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   
   def home 
+    @hide_header = true 
   end 
 
   private 

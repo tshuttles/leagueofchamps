@@ -1,9 +1,11 @@
-<h1><%= @inventory_item.weapon_name %></h1>
+<% @weapon.inventory_items.each do |item| %>
+  <h1><%= item.weapon_name %></h1> 
+<% end %> 
 
-<%= @weapon.weapon_type %><br>
+<h3><%= @weapon.weapon_type %></h3><br>
 <br>
 
 <%= link_to "Give Your Weapon a Name", new_inventory_item_path %><br>
 <%= link_to "Delete Weapon", weapon_path(@weapon), method: :delete %><br>
 <%= link_to "Your Weapons", weapons_path %><br>
-<%= link_to "Your Champion", champion_path(@champion) %> 
+<%# link_to "Your Champion", champion_path(@champion) %> 

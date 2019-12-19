@@ -9,6 +9,15 @@ class InventoryItemsController < ApplicationController
     @inventory_item.save ? (redirect_to champion_path(@champion)) : (redirect_to new_inventory_items_path)
   end 
 
+  def edit 
+    @inventory_item = InventoryItem.find_by_id(params[:id])
+  end 
+
+  def update
+    @inventory_item = InventoryItem.find_by_id(params[:id])
+    @inventory_item.update(inventory_items_params)
+    redirect_to champion_path(@inventory_item.champion)
+  end
   # optional
   def destroy 
   end

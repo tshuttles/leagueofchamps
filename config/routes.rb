@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :weapons
   resources :champions do 
     resources :weapons, only: [:index, :show, :new]
-    resources :inventory_items, only: [:index, :show, :new] 
+    resources :inventory_items 
   end
   resources :inventory_items
 

@@ -9,7 +9,7 @@ class ChampionsController < ApplicationController
   end 
 
   def new 
-    @champion = Champion.new 
+    @champion = Champion.new
   end 
 
   def create 

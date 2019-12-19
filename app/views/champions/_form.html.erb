@@ -20,12 +20,12 @@
   <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
   <br>
   <%= f.label :weapon_type, "Weapon Type:" %>
-  <%= f.select :weapon, Weapon.all, include_blank: 'Select weapon type', required: true %><br>
+  <%= f.collection_select(:champion, :weapon_ids, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
   <br>
-  <%= f.fields_for :inventory_items do |attr| %>
-    <%= attr.label "Name Your Weapon" %>
+  <%= f.fields_for :inventory_items, InventoryItem.new do |attr| %>
+    <%= attr.label "Name Your Weapon:" %>
     <%= attr.text_field :weapon_name %>
-  <% end %>
-
+  <% end %><br>
+  <br>
   <%= f.submit "Create Champion" %> 
 <% end %> 

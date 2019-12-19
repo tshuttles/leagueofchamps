@@ -8,7 +8,7 @@ class Weapon < ApplicationRecord
   after_create :cap_weapon_type
 
   def cap_weapon_type 
-    weapon_type.capitalize if weapon_type
+    weapon_type.capitalize! if weapon_type
   end 
 
 end

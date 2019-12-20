@@ -6,13 +6,17 @@
   <% end %> 
 <% end %> 
 
-<%= form_with model: @user, local: true do |f| %> 
-  <%= f.label :name, "Your Name" %> 
-  <%= f.text_field :name %><br>
-  <br>
-  <%= f.label :password, "Your Password" %> 
-  <%= f.password_field :password %><br>
-  <br>
+<%= form_with model: @user, local: true do |f| %>
+  <p> 
+    <%= f.label :name, "Your Name:" %> 
+    <%= f.text_field :name %><br>
+    <br>
+  </p>
+  <p>
+    <%= f.label :password, "Your Password:" %> 
+    <%= f.password_field :password %><br>
+    <br>
+  </p>
   
-  <%= f.submit "Sign Up" %> 
+  <%= f.submit "Sign Up" %>
 <% end %> 

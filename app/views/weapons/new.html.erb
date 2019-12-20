@@ -1,11 +1,15 @@
 <h1>Create a New Weapon</h1>
 
-<%= form_with model: @weapon, local: true do |f| %> 
-  <%= f.label :weapon_type, "Weapon Type:" %>
-  <%= f.text_field :weapon_type %><br>
+<%= form_with model: @inventory_item, local: true do |f| %> 
+  <p>
+    <%= f.label :weapon_type, "Weapon Type:" %>
+    <%= f.collection_select(:weapon_id, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
+  </p>
+  <p>
+    <%= f.label "Select the Champion:" %>
+    <%= f.collection_select(:champion_id, Champion.all, :id, :name, prompt: 'Select champion') %><br>
+  </p>
   <br>
-  <label>Select champ: </label>
-  <%= f.collection_check_boxes :champion_ids, Champion.all, :id, :name %>
   <%= f.submit "Create Weapon" %> 
 <% end %><br>
 

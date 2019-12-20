@@ -5,8 +5,8 @@ class InventoryItemsController < ApplicationController
   end 
 
   def create
-    @inventory_item = InventoryItem.new(inventory_items_params) 
-    @inventory_item.save ? (redirect_to champion_path(@champion)) : (redirect_to new_inventory_items_path)
+    @inventory_item = InventoryItem.new(inventory_items_params)
+    @inventory_item.save ? (redirect_to champion_path(@inventory_item.champion)) : (redirect_to new_champion_inventory_item_path(@inventory_item.champion))
   end 
 
   def edit 

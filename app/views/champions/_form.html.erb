@@ -26,17 +26,18 @@
   </p>
   <br>
   <p>
-    <%= f.label :weapon_type, "Weapon Type:" %>
-    <%= f.collection_select(:champion, :weapon_ids, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
-  </p>
-  <br>
-  <p>
     <%= f.fields_for :inventory_items, InventoryItem.new do |attr| %>
-      <%= attr.label "Name Your Weapon:" %>
-      <%= attr.text_field :weapon_name %>
+      <p>
+        <%= attr.label :weapon_type, "Weapon Type:" %>
+        <%= attr.collection_select(:weapon_id, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
+      </p>
+      <br>
+      <p>
+        <%= attr.label "Name Your Weapon:" %>
+        <%= attr.text_field :weapon_name %>
+      </p>
     <% end %><br>
   </p>
-  <br>
   <p>
     <%= f.submit "Create Champion" %> 
   </p>

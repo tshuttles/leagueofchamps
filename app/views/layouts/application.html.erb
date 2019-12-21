@@ -12,6 +12,6 @@
   <body>
     <%= render "layouts/header" unless @hide_header %>
     <%= yield %>
-    <%= render "layouts/footer" %> 
+    <%= render "layouts/footer" unless !logged_in?%> 
   </body>
 </html>

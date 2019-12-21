@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper_method :logged_in?
   
   def home 
     @hide_header = true 

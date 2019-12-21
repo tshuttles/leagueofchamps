@@ -9,10 +9,10 @@ class Champion < ApplicationRecord
   accepts_nested_attributes_for :inventory_items
   accepts_nested_attributes_for :weapons
 
-  after_create :cap_name
+  before_validation :cap_champ_name
 
-  def cap_name 
-    self.name.capitalize! if name
+  def cap_champ_name 
+    self.name.titleize! if name
   end 
 
   RACE = %w{ Human Elf Dwarf Troll }

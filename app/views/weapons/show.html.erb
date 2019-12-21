@@ -4,8 +4,12 @@
 
 <h3><%= @weapon.weapon_type %></h3><br>
 <br>
+<hr>
 
-<%= link_to "Give Your Weapon a Name", new_inventory_item_path %><br>
-<%= link_to "Delete Weapon", weapon_path(@weapon), method: :delete %><br>
-<%= link_to "Your Weapons", weapons_path %><br>
-<%# link_to "Your Champion", champion_path(@champion) %> 
+<p>
+  <%= link_to "Delete Weapon", weapon_path(@weapon), method: :delete %><br>
+  <br>
+  <%= link_to "Your Weapons", weapons_path %><br>
+  <br>
+  <%# link_to "Your Champion", champion_path(@champion) %> 
+</p>

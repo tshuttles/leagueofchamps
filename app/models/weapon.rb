@@ -5,10 +5,10 @@ class Weapon < ApplicationRecord
   validates :weapon_type, uniqueness: true
   validates :weapon_type, length: {minimum: 3}
 
-  after_create :cap_weapon_type
+  before_validation :cap_weapon_type
 
   def cap_weapon_type 
-    self.weapon_type.capitalize! if weapon_type
+    self.weapon_type.titleize! if weapon_type
   end 
 
 end

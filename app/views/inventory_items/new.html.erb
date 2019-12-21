@@ -14,8 +14,7 @@
     <%= f.label :weapon_type, "Weapon Type:" %>
     <%= f.collection_select(:weapon_id, Weapon.all, :id, :weapon_type, prompt: 'Select weapon type') %><br>
   </p>
-  <%= f.hidden_field :champion_id %> 
-  <% byebug %>
+  <%= f.hidden_field :champion_id, value: params[:champion_id] %> 
   <p>
     <%= f.label :weapon_name, "Weapon Name:" %> 
     <%= f.text_field :weapon_name %><br>

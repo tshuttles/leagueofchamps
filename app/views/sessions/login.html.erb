@@ -1,11 +1,15 @@
 <h1>Login</h1>
 
 <%= form_for @user, url: login_path, method: :post do |f| %> 
-  <%= f.label :name, "Your name" %> 
-  <%= f.collection_select(:name, User.all, :name, :name, prompt: "Please select your username from this dropdown") %><br>
-  <br>
-  <%= f.label :password, "Your password" %> 
-  <%= f.password_field :password %><br> 
-  <br>
+  <p>
+    <%= f.label :name, "Your name:" %> 
+    <%= f.collection_select(:name, User.all, :name, :name, prompt: "Please select your username from this dropdown") %><br>
+    <br>
+  </p>
+  <p>
+    <%= f.label :password, "Your password:" %> 
+    <%= f.password_field :password %><br> 
+    <br>
+  </p>
   <%= f.submit "Login" %> 
 <% end %> 

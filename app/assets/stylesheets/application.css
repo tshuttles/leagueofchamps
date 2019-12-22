@@ -28,3 +28,11 @@ footer {
   bottom:5px;
   width:100%;
 }
+
+.success {
+  color: green; 
+}
+
+.error {
+  color: red; 
+}

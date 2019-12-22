@@ -12,10 +12,10 @@ class Champion < ApplicationRecord
   before_validation :cap_champ_name
 
   def cap_champ_name 
-    self.name.titleize! if name
+    self.name.titleize if name
   end 
 
-  RACE = %w{ Human Elf Dwarf Troll }
-  CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric }
-  # TYPES = %w{ Sword Bow Staff Axe Knife }
+  RACE = %w{ Human Elf Dwarf Troll Orc Giant Undead Halfling }
+  CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric Druid Necromancer Guardian Bard}
+  
 end

@@ -8,7 +8,7 @@ class Weapon < ApplicationRecord
   before_validation :cap_weapon_type
 
   def cap_weapon_type 
-    self.weapon_type.titleize! if weapon_type
+    self.weapon_type.titleize if weapon_type
   end 
 
 end

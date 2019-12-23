@@ -1,13 +1,12 @@
 <h1>Your Champions</h1>
 
-  <ul>
-    <% @champions.each do |champion| %> 
-      <li> 
-        <p><%= link_to champion.name, champion_path(champion) %></p>
-      </li> 
-    <% end %> 
-  </ul> 
-</p>
+<ul>
+  <% @champions.each do |champion| %> 
+    <li> 
+      <p><%= link_to champion.name, champion_path(champion) %></p>
+    </li> 
+  <% end %> 
+</ul> 
 
 <p>
   <%= link_to "Create New Champion", new_champion_path %><br>

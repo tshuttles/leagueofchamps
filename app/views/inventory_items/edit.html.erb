@@ -1,8 +1,10 @@
-<h1>Edit Weapon</h1>
+<h1>Edit Your Legendary Weapon</h1>
 
 <%= form_with model: @inventory_item, local: true do |f| %> 
-  <%= f.label :weapon_name, "Weapon Name:" %> 
-  <%= f.text_field :weapon_name %><br>
-  <br>
+  <p>
+    <%= f.label :weapon_name, "Weapon Name:" %> 
+    <%= f.text_field :weapon_name %><br>
+    <br>
+  </p>
   <%= f.submit "Submit Weapon Name" %> 
 <% end %> 

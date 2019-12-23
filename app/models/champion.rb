@@ -15,6 +15,8 @@ class Champion < ApplicationRecord
     self.name.titleize if name
   end 
 
+  scope :ready_for_battle, -> { where(current_user.champions.count > 1)}
+
   RACE = %w{ Human Elf Dwarf Troll Orc Giant Undead Halfling }
   CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric Druid Necromancer Guardian Bard}
   

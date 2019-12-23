@@ -1,20 +1,15 @@
-
 class WeaponsController < ApplicationController
 
   def index 
-    @champion = Champion.find_by_id(params[:id])
     # @weapons = Weapon.all
+    @champion = Champion.find_by_id(params[:champion_id])
+    # byebug
     @weapons = @champion.weapons.all 
   end 
 
   def show 
     @weapon = Weapon.find_by(id: params[:id])
   end 
-
-  # def new 
-  #   @champion = Champion.find_by_id(params[:champion_id])
-  #   @weapon = Weapon.new
-  # end 
 
   def create 
     @weapon = Weapon.new(weapon_params)
@@ -34,7 +29,7 @@ class WeaponsController < ApplicationController
   private 
 
   def weapon_params 
-    params.require(:weapon).permit(:weapon_type, inventory_items: [:weapon_name, :champion_id], champions_attributes: [:id])
+    params.require(:weapon).permit(:weapon_type, inventory_items_attributes: [:weapon_name, :champion_id, :weapon_id], champions_attributes: [:id])
   end 
 
 end

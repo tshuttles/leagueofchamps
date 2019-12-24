@@ -1,2 +1,20 @@
 <h1>Edit Your Champion</h1>
-<%= render 'form', champion: @champion %> 
+
+<%= render 'form', champion: @champion %> <%= form_with model: champion, local: true do |f| %> 
+  <p>
+    <%= f.label :name, "Champion Name: " %>
+    <%= f.text_field :name %><br>
+  </p>
+  <br>
+  <p>
+    <%= f.label :race, "Champion Race:" %>
+    <%= f.select :race, Champion::RACE, include_blank: 'Select race', required: true %><br>
+  </p>
+  <br>
+  <p>
+    <%= f.label :classification, "Champion Class:" %> 
+    <%= f.select :classification, Champion::CLASS, include_blank: 'Select class', required: true %><br>
+  </p>
+  <br>
+    <%= f.submit "Create Champion" %> 
+<% end %> 

@@ -12,7 +12,7 @@
   <ul>
     <% @champion.inventory_items.each do |weapon| %> 
       <li>
-        <p><%= link_to weapon.weapon_name, weapon_path(weapon) %> - <%= link_to "Edit Weapon", edit_champion_inventory_item_path(weapon.champion, weapon) %></p>
+        <p><%= link_to weapon.weapon_name, champion_weapon_path(weapon) %> - <%= link_to "Edit Weapon", edit_champion_inventory_item_path(weapon.champion, weapon) %></p>
       </li>
     <% end %> 
   </ul>

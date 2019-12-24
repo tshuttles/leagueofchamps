@@ -1,13 +1,4 @@
-<% if @champion.errors.any? %>
-  <div id="error_explanation">
-    <h3><%= pluralize(@champion.errors.count, "error") %> prohibited this champion from being saved:</h3>
-    <ul>
-      <% @champion.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: 'layouts/errors', locals: {object: @champion} %> 
 
 <%= form_with model: champion, local: true do |f| %> 
   <p>

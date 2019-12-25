@@ -1,14 +1,13 @@
 class WeaponsController < ApplicationController
 
   def index 
-    # @weapons = Weapon.all
     @champion = Champion.find_by_id(params[:champion_id])
-    # byebug
     @weapons = @champion.weapons.all 
   end 
 
   def show 
-    @weapon = Weapon.find_by(id: params[:id])
+    # byebug
+    @weapon = Weapon.find_by_id(params[:id])
   end 
 
   def create 

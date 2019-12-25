@@ -2,7 +2,7 @@ class ChampionsController < ApplicationController
   before_action :find_champion, only: [:show, :edit, :update]
 
   def index 
-    @champions = current_user.champions.all 
+    @champions = current_user.champions.all
   end 
 
   def show

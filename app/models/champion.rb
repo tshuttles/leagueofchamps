@@ -15,11 +15,7 @@ class Champion < ApplicationRecord
   #   self.name.titleize if name
   # end 
   
-  # scope :alpha, -> { order(“lower(name)”) }
-
-  # def self.alpha 
-  #   order(:name)
-  # end
+  scope :alpha, -> { order('lower(:name)') }
 
   RACE = %w{ Human Elf Dwarf Troll Orc Giant Undead Halfling }
   CLASS = %w{ Warrior Ranger Sorceror Rogue Cleric Druid Necromancer Guardian Bard}

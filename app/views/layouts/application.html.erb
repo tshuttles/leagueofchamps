@@ -11,12 +11,15 @@
 
   <body>
     <%= render "layouts/header" unless @hide_header %>
+
     <% flash.each do |k, v| %>
       <div class=<%= k %>>
         <p><%= v %></p>
       </div>
     <% end %>
+
     <%= yield %>
+
     <%= render "layouts/footer" unless !logged_in?%> 
   </body>
 </html>

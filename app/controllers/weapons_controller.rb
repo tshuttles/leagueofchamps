@@ -9,16 +9,6 @@ class WeaponsController < ApplicationController
     @weapon = Weapon.find_by_id(params[:id])
   end 
 
-  # def create 
-  #   @weapon = Weapon.new(weapon_params)
-  #   if @weapon.save 
-  #     @champion = @weapon.champions.where(id: 1)
-  #     redirect_to champion_weapons_path(@champion)
-  #   else
-  #     redirect_to new_weapon_path
-  #   end
-  # end 
-
   def create 
     @weapon = Weapon.new(weapon_params)
     @weapon.save ? (redirect_to champion_weapons_path(@champion)) : (redirect_to new_weapon_path)

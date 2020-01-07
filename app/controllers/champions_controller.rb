@@ -1,3 +1,4 @@
+require 'pry'
 class ChampionsController < ApplicationController
   before_action :find_champion, only: [:show, :edit, :update]
 
@@ -14,7 +15,12 @@ class ChampionsController < ApplicationController
 
   def create
     @champion = current_user.champions.build(champion_params)
-    @champion.save ? (redirect_to champion_path(@champion)) : (redirect_to new_champion_path)
+    if @champion.save
+      redirect_to champion_path(@champion)
+    else 
+      flash[:error] = "Incorrect creation attempt. Please try again."
+      redirect_to new_champion_path
+    end 
   end
 
   def edit 

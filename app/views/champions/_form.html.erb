@@ -1,7 +1,15 @@
-<%= render partial: 'layouts/errors', locals: {object: @champion} %> 
+<% if @champion.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @champion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_with model: champion, local: true do |f| %> 
-  <p>
+  <p class="field_with_errors">
     <%= f.label :name, "Champion Name: " %>
     <%= f.text_field :name %><br>
   </p>
